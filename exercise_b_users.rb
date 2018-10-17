@@ -86,11 +86,14 @@ p users["Erik"][:lottery_numbers].sort[0]
 p users["Erik"][:lottery_numbers].min()
 
 # 6. Return an array of Avril's lottery numbers that are even
-even_numbers = []
-for number in users["Avril"][:lottery_numbers]
-  even_numbers << number if number%2 ==0
+def even_lottery_numbers(list_of_numbers)
+  even_numbers = []
+  for number in list_of_numbers
+    even_numbers << number if number%2 ==0
+  end
+  even_numbers
 end
-p even_numbers
+p "Even numbers are: #{ even_lottery_numbers(users["Avril"][:lottery_numbers]) }"
 
 # 7. Erik is one lottery number short! Add the number `7` to be included in his lottery numbers
 users["Erik"][:lottery_numbers] << 7
